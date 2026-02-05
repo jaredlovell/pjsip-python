@@ -29,4 +29,4 @@ COPY requirements.txt requirements.txt
 RUN pip3 --no-cache-dir install --user -r requirements.txt
 
 #copy demo code
-COPY ./hw.py /app
+COPY ./*.py /app/
