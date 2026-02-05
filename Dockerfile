@@ -25,12 +25,8 @@ RUN cd pjproject/pjsip-apps/src/swig/python && \
     make install
 
 ##python
-#public repo
-#COPY requirements.txt requirements.txt
-#RUN pip3 --no-cache-dir install --user -r requirements.txt
+COPY requirements.txt requirements.txt
+RUN pip3 --no-cache-dir install --user -r requirements.txt
 
-
-
-
-
-COPY ./ /app
+#copy demo code
+COPY ./hw.py /app
