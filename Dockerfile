@@ -13,16 +13,19 @@ RUN apt update && apt install -y \
 RUN git clone https://github.com/pjsip/pjproject.git
 RUN cd pjproject && \
     export CFLAGS="$CFLAGS -fPIC" && \
-    ./configure --enable-shared && \
+    ./configure --enable-shared --prefix /usr/local && \
     make dep && \
     make && \
-    make install
-
+    make install && \
+    ldconfig
 
 #build pjsip python
 RUN cd pjproject/pjsip-apps/src/swig/python && \
     make && \
     make install
+
+
+
 
 ##python
 COPY requirements.txt requirements.txt
