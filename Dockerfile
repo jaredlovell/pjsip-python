@@ -26,9 +26,6 @@ RUN cd pjproject/pjsip-apps/src/swig/python && \
     make
 
 
-RUN cd pjproject/pjsip-apps/src/pjsua && \
-    make
-
 # final
 FROM python:3.12.2-bookworm
 
