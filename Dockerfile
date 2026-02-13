@@ -6,6 +6,11 @@ RUN apt update && apt install -y \
     git \
     build-essential \ 
     libasound2-dev \
+    alsa-dev \
+    pulseaudio \
+    jackd2 \
+    alsa-utils \
+    dbus-x11 \
     && rm -rf /var/lib/apt/lists/*
 
 
@@ -19,6 +24,10 @@ RUN cd pjproject && \
 
 #build pjsip python
 RUN cd pjproject/pjsip-apps/src/swig/python && \
+    make
+
+
+RUN cd pjproject/pjsip-apps/src/pjsua && \
     make
 
 # final
