@@ -6,7 +6,6 @@ RUN apt update && apt install -y \
     git \
     build-essential \ 
     libasound2-dev \
-    alsa-dev \
     pulseaudio \
     jackd2 \
     alsa-utils \
